@@ -8,21 +8,23 @@ function encriptar() {
     let textoUsuario = areaTextoUsuario.value;
     let textoEncriptado = '';
     
-    for (let letra of textoUsuario) {
-        if (letra == 'a')
-            textoEncriptado += 'ai';
-        else if (letra == 'e')
-            textoEncriptado += 'enter';
-        else if (letra == 'i')
-            textoEncriptado += 'imes';
-        else if (letra == 'o')
-            textoEncriptado += 'ober';
-        else if (letra == 'u')
-            textoEncriptado += 'ufat';
-        else
-            textoEncriptado += letra;
+    if (validarTexto(textoUsuario)){
+        for (let letra of textoUsuario) {
+            if (letra == 'a')
+                textoEncriptado += 'ai';
+            else if (letra == 'e')
+                textoEncriptado += 'enter';
+            else if (letra == 'i')
+                textoEncriptado += 'imes';
+            else if (letra == 'o')
+                textoEncriptado += 'ober';
+            else if (letra == 'u')
+                textoEncriptado += 'ufat';
+            else
+                textoEncriptado += letra;
+        }
+        areaTextoListo.innerHTML = textoEncriptado;
     }
-    areaTextoListo.innerHTML = textoEncriptado;
 }
 
 function desencriptar() {
@@ -50,4 +52,16 @@ function desencriptar() {
         }
     }
     areaTextoListo.innerHTML = textoDesencriptado;
+}
+
+function validarTexto(texto) {
+    for (let i = 0; i < texto.length; i++) {
+        let codigoASCII = texto.charCodeAt(i);
+
+        if ((codigoASCII < 97 || codigoASCII > 122) && codigoASCII !== 32) {
+            alert("Por favor, ingrese solo letras minúsculas.");
+            return false;
+        }
+    }
+    return true;
 }
