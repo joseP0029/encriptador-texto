@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header>
         <img src="./imagenes/Logo.png" alt="Logo de Alura">
     </header>
-    <main>
-        <textarea name="zona-desencriptar" id="area-texto-desencriptar" placeholder="Ingrese el texto aquí..."></textarea>
-        <p>Solo letras minúsculas y sin acentos</p>
+    <main class="contenedor-principal">    
         <div>
-            <button id="boton-encriptar" onclick="encriptar();">Encriptar</button>
-            <button id="boton-desencriptar" onclick="desencriptar();">Desencriptar</button>
+            <textarea name="zona-desencriptar" id="area-texto-desencriptar" class="area-texto" placeholder="Ingrese el texto aquí..."></textarea>
+            <p>⚠️Solo letras minúsculas y sin acentos</p>
+            <div>
+                <button id="boton-encriptar" class="boton boton__oscuro" onclick="encriptar();">Encriptar</button>
+                <button id="boton-desencriptar" class="boton" onclick="desencriptar();">Desencriptar</button>
+            </div>
+        </div>
+        <div>
+            <div>
+                <textarea name="zona-texto" id="area-texto-listo" class="area-texto" disabled></textarea>
+                <img src="./imagenes/Muñeco.png" alt="Muñeco mirando por una lupa">
+                <p>Ningún mensaje fue encontrado</p>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button id="boton-copiar" class="boton">Copiar</button>
+            </div>
         </div>
     </main>
-    <aside>
-        <div>
-            <textarea name="zona-texto" id="area-texto-listo" disabled></textarea>
-            <img src="./imagenes/Muñeco.png" alt="Muñeco mirando por una lupa">
-            <p>Ningún mensaje fue encontrado</p>
-            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            <button id="boton-copiar">Copiar</button>
-        </div>
-    </aside>
     <footer>
         <p>Hecho por José Daniel Pinzón Angulo</p>
     </footer>
