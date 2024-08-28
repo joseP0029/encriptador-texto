@@ -18,6 +18,7 @@ body {
     box-sizing: border-box;
     background-color: var(--color-fondo);
     color: var(--color-primario);
+    width: 100vw;
 }
  header {
     padding: 2% 0% 0% 5%;
@@ -27,7 +28,6 @@ body {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 100vw;
  }
 
  .zona-entrada {
@@ -39,12 +39,13 @@ body {
  }
 
  .area-texto {
-    width: 81%;
+    width: 80%;
     resize: none;
     background-color: unset;
     border: 1px solid var(--color-primario);
     border-radius: 10px;
     padding: 10px;
+    font-size: 1.5rem;
  }
 
 #area-texto-listo {
