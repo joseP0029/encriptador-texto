@@ -33,6 +33,9 @@ body {
  .zona-entrada {
     width: 50%;
     padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
  }
 
  .area-texto {
@@ -46,7 +49,6 @@ body {
 
 #area-texto-listo {
     display: none;
-    width: 90%;
 }
 
 .zona-salida {

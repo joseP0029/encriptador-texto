@@ -4,6 +4,9 @@ let botonEncriptar = document.getElementById("boton-encriptar");
 let botonDesencriptar = document.getElementById("boton-desencriptar");
 let botonCopiar = document.getElementById("boton-copiar");
 let dibujo = document.getElementById("dibujo");
+let texto1 = document.getElementById("texto1");
+let texto2 = document.getElementById("texto2");
+
 
 function encriptar() {
     let textoUsuario = areaTextoUsuario.value;
@@ -69,5 +72,7 @@ function validarTexto(texto) {
     }
     areaTextoListo.style.display = 'block';
     dibujo.style.display = 'none';
+    texto1.style.display = 'none';
+    texto2.style.display = 'none';
     return true;
 }
