@@ -1,0 +1,53 @@
+let areaTextoUsuario = document.getElementById("area-texto-desencriptar");
+let areaTextoListo = document.getElementById("area-texto-listo");
+let botonEncriptar = document.getElementById("boton-encriptar");
+let botonDesencriptar = document.getElementById("boton-desencriptar");
+let botonCopiar = document.getElementById("boton-copiar");
+
+function encriptar() {
+    let textoUsuario = areaTextoUsuario.value;
+    let textoEncriptado = '';
+    
+    for (let letra of textoUsuario) {
+        if (letra == 'a')
+            textoEncriptado += 'ai';
+        else if (letra == 'e')
+            textoEncriptado += 'enter';
+        else if (letra == 'i')
+            textoEncriptado += 'imes';
+        else if (letra == 'o')
+            textoEncriptado += 'ober';
+        else if (letra == 'u')
+            textoEncriptado += 'ufat';
+        else
+            textoEncriptado += letra;
+    }
+    areaTextoListo.innerHTML = textoEncriptado;
+}
+
+function desencriptar() {
+    let textoUsuario = areaTextoUsuario.value;
+    let textoDesencriptado = '';
+
+    for (let i = 0; i < textoUsuario.length; i++) {
+        if (textoUsuario.startsWith('ai', i)) {
+            textoDesencriptado += 'a';
+            i += 1;
+        } else if (textoUsuario.startsWith('enter', i)) {
+            textoDesencriptado += 'e';
+            i += 4;
+        } else if (textoUsuario.startsWith('imes', i)) {
+            textoDesencriptado += 'i';
+            i += 3;
+        } else if (textoUsuario.startsWith('ober', i)) {
+            textoDesencriptado += 'o';
+            i += 3;
+        } else if (textoUsuario.startsWith('ufat', i)) {
+            textoDesencriptado += 'u';
+            i += 3;
+        } else {
+            textoDesencriptado += textoUsuario[i];
+        }
+    }
+    areaTextoListo.innerHTML = textoDesencriptado;
+}

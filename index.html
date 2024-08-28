@@ -13,19 +13,22 @@
         <textarea name="zona-desencriptar" id="area-texto-desencriptar" placeholder="Ingrese el texto aquí..."></textarea>
         <p>Solo letras minúsculas y sin acentos</p>
         <div>
-            <button>Encriptar</button>
-            <button>Desencriptar</button>
+            <button id="boton-encriptar" onclick="encriptar();">Encriptar</button>
+            <button id="boton-desencriptar" onclick="desencriptar();">Desencriptar</button>
         </div>
     </main>
     <aside>
         <div>
+            <textarea name="zona-texto" id="area-texto-listo" disabled></textarea>
             <img src="./imagenes/Muñeco.png" alt="Muñeco mirando por una lupa">
             <p>Ningún mensaje fue encontrado</p>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            <button id="boton-copiar">Copiar</button>
         </div>
     </aside>
     <footer>
         <p>Hecho por José Daniel Pinzón Angulo</p>
     </footer>
+    <script src="./scripts/app.js"></script>
 </body>
 </html>
