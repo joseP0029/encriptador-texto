@@ -3,6 +3,7 @@ let areaTextoListo = document.getElementById("area-texto-listo");
 let botonEncriptar = document.getElementById("boton-encriptar");
 let botonDesencriptar = document.getElementById("boton-desencriptar");
 let botonCopiar = document.getElementById("boton-copiar");
+let dibujo = document.getElementById("dibujo");
 
 function encriptar() {
     let textoUsuario = areaTextoUsuario.value;
@@ -31,29 +32,32 @@ function desencriptar() {
     let textoUsuario = areaTextoUsuario.value;
     let textoDesencriptado = '';
 
-    for (let i = 0; i < textoUsuario.length; i++) {
-        if (textoUsuario.startsWith('ai', i)) {
-            textoDesencriptado += 'a';
-            i += 1;
-        } else if (textoUsuario.startsWith('enter', i)) {
-            textoDesencriptado += 'e';
-            i += 4;
-        } else if (textoUsuario.startsWith('imes', i)) {
-            textoDesencriptado += 'i';
-            i += 3;
-        } else if (textoUsuario.startsWith('ober', i)) {
-            textoDesencriptado += 'o';
-            i += 3;
-        } else if (textoUsuario.startsWith('ufat', i)) {
-            textoDesencriptado += 'u';
-            i += 3;
-        } else {
-            textoDesencriptado += textoUsuario[i];
-        }
-    }
-    areaTextoListo.innerHTML = textoDesencriptado;
-}
+    if(validarTexto(textoUsuario)) {
 
+        for (let i = 0; i < textoUsuario.length; i++) {
+            if (textoUsuario.startsWith('ai', i)) {
+                textoDesencriptado += 'a';
+                i += 1;
+            } else if (textoUsuario.startsWith('enter', i)) {
+                textoDesencriptado += 'e';
+                i += 4;
+            } else if (textoUsuario.startsWith('imes', i)) {
+                textoDesencriptado += 'i';
+                i += 3;
+            } else if (textoUsuario.startsWith('ober', i)) {
+                textoDesencriptado += 'o';
+                i += 3;
+            } else if (textoUsuario.startsWith('ufat', i)) {
+                textoDesencriptado += 'u';
+                i += 3;
+            } else {
+                textoDesencriptado += textoUsuario[i];
+            }
+        }
+        areaTextoListo.innerHTML = textoDesencriptado;
+    }
+}
+    
 function validarTexto(texto) {
     for (let i = 0; i < texto.length; i++) {
         let codigoASCII = texto.charCodeAt(i);
@@ -63,5 +67,7 @@ function validarTexto(texto) {
             return false;
         }
     }
+    areaTextoListo.style.display = 'block';
+    dibujo.style.display = 'none';
     return true;
 }

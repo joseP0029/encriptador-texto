@@ -11,6 +11,7 @@
 * {
     padding: auto;
     margin: auto;
+    font-family: var(--fuente-inter);
 }
 
 body {
@@ -26,30 +27,47 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 52px;
-
+    height: 76vh;
  }
 
  .area-texto {
     width: 81%;
     resize: none;
     background-color: unset;
-    border: unset;
+    border: 1px solid var(--color-primario);
+    border-radius: 10px;
  }
 
  #area-texto-desencriptar {
  }
 
+#area-texto-listo {
+    display: none;
+    width: 90%;
+}
+
+.zona-salida {
+    background-color: #FFFFFF;
+    padding: 8% 4%;
+    margin: 2%;
+
+}
  .boton {
     background-color: var(--color-fondo);
     border: 1px solid var(--color-primario);
-    border-radius: 24px;
-    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    padding: 15px 80px;
+    color: var(--color-primario);
  }
 
  .boton__oscuro {
-
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
  }
+
+#boton-copiar {
+    display: none;
+}
 
  footer {
     background-color: var(--color-primario);
@@ -58,4 +76,6 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 300;
+    position: absolute;
+    width: 100%;
  }
